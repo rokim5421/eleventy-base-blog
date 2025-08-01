@@ -5,11 +5,7 @@ import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 import pluginFilters from "./_config/filters.js";
-module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("admin"); // 👈 baris penting
-  
-  // baris konfigurasi lain yang mungkin sudah ada
-	};
+
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
 	// Drafts, see also _data/eleventyDataSchema.js
@@ -115,7 +111,7 @@ export default async function(eleventyConfig) {
 		// slugify: eleventyConfig.getFilter("slugify"),
 		// selector: "h1,h2,h3,h4,h5,h6", // default
 	});
-
+	eleventyConfig.addPassthroughCopy("admin"); // 👈 baris penting
 	eleventyConfig.addShortcode("currentBuildDate", () => {
 		return (new Date()).toISOString();
 	});
@@ -145,7 +141,7 @@ export const config = {
 
 	// Pre-process *.html files with: (default: `liquid`)
 	htmlTemplateEngine: "njk",
-
+	
 	// These are all optional:
 	dir: {
 		input: "content",          // default: "."
