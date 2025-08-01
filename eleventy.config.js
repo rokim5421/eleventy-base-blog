@@ -25,6 +25,11 @@ export default async function(eleventyConfig) {
 
 	// Run Eleventy when these files change:
 	// https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
+	module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("admin"); // 👈 baris penting
+  
+  // baris konfigurasi lain yang mungkin sudah ada
+	};
 
 	// Watch CSS files
 	eleventyConfig.addWatchTarget("css/**/*.css");
