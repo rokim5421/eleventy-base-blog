@@ -17,7 +17,7 @@ export default async function(eleventyConfig) {
 
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
-	eleventyConfig.addPassthroughCopy("admin"); // 👈 baris penting
+	// eleventyConfig.addPassthroughCopy("admin"); // 👈 baris penting
 	eleventyConfig
 		.addPassthroughCopy({
 			"./public/": "/"
