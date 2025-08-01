@@ -1,10 +1,13 @@
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("admin");
 
-  return {
-    dir: {
-      input: ".",
-      output: "_site"
-    }
-  };
+  // sisa konfigurasi lainnya...
+}
+export const config = {
+  dir: {
+    input: "content",
+    includes: "../_includes",
+    data: "../_data",
+    output: "_site",
+  },
 };
